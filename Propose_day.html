@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Propose Day 💍</title>
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #fff0f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#gifScreen, #card {
+  text-align: center;
+  width: 90%;
+  max-width: 360px;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Card */
+#card {
+  display: none;
+  background: rgb(255, 230, 240);
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+.note {
+  margin-top: 16px;
+  padding: 10px 18px;
+  background: #fff;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  font-size: 18px;
+}
+
+button {
+  padding: 10px 18px;
+  margin: 10px;
+  border: none;
+  border-radius: 22px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+.no {
+  background: #ddd;
+}
+
+#result {
+  margin-top: 15px;
+  min-height: 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Floating hearts */
+.hearts {
+  position: fixed;
+  bottom: -10%;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.hearts span {
+  position: absolute;
+  font-size: 22px;
+  animation: floatUp linear infinite;
+  opacity: 0.7;
+}
+
+.hearts span:nth-child(1){left:10%;animation-duration:6s;}
+.hearts span:nth-child(2){left:20%;animation-duration:7.5s;}
+.hearts span:nth-child(3){left:30%;animation-duration:7s;}
+.hearts span:nth-child(4){left:40%;animation-duration:6.8s;}
+.hearts span:nth-child(5){left:50%;animation-duration:6.2s;}
+.hearts span:nth-child(6){left:60%;animation-duration:7.8s;}
+.hearts span:nth-child(7){left:70%;animation-duration:6.4s;}
+.hearts span:nth-child(8){left:80%;animation-duration:7.2s;}
+.hearts span:nth-child(9){left:90%;animation-duration:5.9s;}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity:0; }
+  10% { opacity:0.7; }
+  100% { transform: translateY(-120vh); opacity:0.4; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+<div class="hearts">
+  <span>💖</span><span>💕</span><span>💘</span><span>💗</span><span>💝</span>
+  <span>❤️</span><span>💍</span><span>💓</span><span>🩷</span>
+</div>
+
+<!-- GIF Screen -->
+<div id="gifScreen">
+  <!-- Cute proposal-style gif -->
+   <div class="tenor-gif-embed" data-postid="4013167120558620298" data-share-method="host" data-aspect-ratio="1" data-width="100%">
+    <a href="https://tenor.com/view/bubu-dudu-heart-gif-4013167120558620298">Bubu Dudu Heart Sticker</a>from 
+    <a href="https://tenor.com/search/bubu+dudu+heart-stickers">Bubu Dudu Heart Stickers</a></div> 
+   <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+  <div class="note" onclick="showNote()">Tap this moment 💌</div>
+</div>
+
+<!-- Card -->
+<div id="card">
+  <h2>Propose Day 💍</h2>
+
+  <p>I’ve been meaning to ask you something…</p>
+  <p><strong>Will you hold my hand through every tomorrow?</strong></p>
+
+  <button class="yes" onclick="yes()">Yes 🥹💖</button>
+  <button class="no" onclick="no()">No 😶‍🌫️</button>
+
+  <p id="result"></p>
+</div>
+
+<script>
+let noCount = 0;
+
+function showNote(){
+  document.getElementById("gifScreen").style.display = "none";
+  document.getElementById("card").style.display = "block";
+}
+
+function yes(){
+  document.getElementById("result").innerHTML =
+   "You just made my heart yours 💍💖<br>I promise love, respect, and endless care 🌸";
+}
+
+function no(){
+  noCount++;
+  const r = document.getElementById("result");
+  if(noCount===1) r.innerHTML="🥺 Is it too soon?";
+  else if(noCount===2) r.innerHTML="😭 I’ll wait… I’m not going anywhere.";
+  else if(noCount===3) r.innerHTML="🥹 Even if not today, my heart chooses you.";
+  else r.innerHTML="Tomorrow I’ll try again… gently 💕";
+}
+</script>
+
+</body>
+</html>
