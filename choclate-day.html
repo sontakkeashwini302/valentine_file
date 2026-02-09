@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Chocolate Day 🍫</title>
+<style>
+body{
+  margin:0;height:100vh;display:flex;justify-content:center;align-items:center;
+  background:#fff0f5;font-family:Arial;overflow:hidden;
+}
+#gifScreen,#card{text-align:center;width:90%;max-width:360px}
+#card{display:none;background:#ffe4ec;padding:22px;border-radius:18px;box-shadow:0 6px 14px rgba(0,0,0,.2)}
+.note{margin-top:16px;padding:10px 18px;background:#fff;border-radius:12px;cursor:pointer}
+button{padding:10px 18px;margin:10px;border:none;border-radius:22px;font-size:16px}
+.yes{background:#ff4d6d;color:#fff}.no{background:#ddd}
+#result{margin-top:15px;min-height:40px}
+.hearts {
+  position: fixed;
+  bottom: -10%;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.hearts span {
+  position: absolute;
+  font-size: 22px;
+  animation: floatUp linear infinite;
+  opacity: 0.7;
+}
+
+.hearts span:nth-child(1){left:10%;animation-duration:6s;}
+.hearts span:nth-child(2){left:20%;animation-duration:7.5s;}
+.hearts span:nth-child(3){left:30%;animation-duration:7s;}
+.hearts span:nth-child(4){left:40%;animation-duration:6.8s;}
+.hearts span:nth-child(5){left:50%;animation-duration:6.2s;}
+.hearts span:nth-child(6){left:60%;animation-duration:7.8s;}
+.hearts span:nth-child(7){left:70%;animation-duration:6.4s;}
+.hearts span:nth-child(8){left:80%;animation-duration:7.2s;}
+.hearts span:nth-child(9){left:90%;animation-duration:5.9s;}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity:0; }
+  10% { opacity:0.7; }
+  100% { transform: translateY(-120vh); opacity:0.4; }
+}
+</style>
+</head>
+<body>
+
+<div class="hearts">
+  <span>💖</span><span>💕</span><span>💘</span><span>💗</span><span>🍫</span>
+  <span>🍩</span><span>🍭</span><span>💓</span><span>🩷</span>
+</div>
+
+
+<div id="gifScreen">
+ <div class="tenor-gif-embed" data-postid="13747997480593423396" data-share-method="host" data-aspect-ratio="1" data-width="100%">
+  <a href="https://tenor.com/view/chocolate-chocolate-day-love-chocolate-world-chocolate-day-sweet-tooth-gif-13747997480593423396">Chocolate Chocolate Day Sticker</a>from 
+  <a href="https://tenor.com/search/chocolate-stickers">Chocolate Stickers</a></div> 
+ <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+  <div class="note" onclick="show()">Happy Choclate Day😚🍭🍫</div>
+</div>
+
+<div id="card">
+  <h2>Chocolate Day 🍫</h2>
+  <p>If I gave you all my chocolates…</p>
+  <p><strong>Would you still want more of me?</strong></p>
+  <button class="yes" onclick="yes()">Yes 😋💖</button>
+  <button class="no" onclick="no()">No 🙊</button>
+  <p id="result"></p>
+</div>
+
+<script>
+let n=0;
+function show(){gifScreen.style.display="none";card.style.display="block";}
+function yes(){result.innerHTML="You’re like my favorite chocolate🍭 — a little sweet, a little nutty, and impossible to share🙈 🍫💖";}
+function no(){
+ n++;
+ if(n==1)result.innerHTML="🥺 Even one bite?";
+ else if(n==2)result.innerHTML="😭 I’ll share everything!";
+ else result.innerHTML="Okay… still keeping you 💕";
+}
+</script>
+</body>
+</html>
