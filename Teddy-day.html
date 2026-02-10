@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Teddy Day 🧸</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#fff0f5;
+  font-family:Arial;
+  overflow:hidden;
+}
+
+#card{
+  text-align:center;
+  width:90%;
+  max-width:360px;
+  background:#ffeaf3;
+  padding:22px;
+  border-radius:18px;
+}
+
+button{
+  padding:10px 18px;
+  margin:10px;
+  border:none;
+  border-radius:22px;
+  font-size:15px;
+}
+
+.yes{background:#ff4d6d;color:#fff}
+.no{background:#ddd}
+
+#result{margin-top:15px}
+
+/* Hug animation screen */
+#hugScreen{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#fff0f5;
+
+  /* important */
+  display:none;
+  flex-direction:column;   /* stacks items vertically */
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Question Card (shows directly now) -->
+<div id="card">
+  <h2>Teddy Day 🧸</h2>
+  <p>If we can’t hug every day…</p>
+  <p><strong>Will you hug this teddy for me?</strong></p>
+
+  <button class="yes" onclick="yes()">Yes 🥹🧸</button>
+  <button class="no" onclick="no()">No 😔</button>
+
+  <p id="result"></p>
+</div>
+
+<!-- Hug Animation Screen -->
+<!-- <div id="hugScreen">
+   <h2 style="margin: top 20%;">Sending you the warmest hug 🤗💖</h2>
+ <div class="tenor-gif-embed" data-postid="11584824232104267827" data-share-method="host" data-aspect-ratio="1" data-width="100%">
+  <a href="https://tenor.com/view/transparent-love-flower-sweet-romance-gif-11584824232104267827">Transparent Love Sticker</a>from 
+  <a href="https://tenor.com/search/transparent-stickers">Transparent Stickers</a></div> 
+ <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+ 
+</div> -->
+<div id="hugScreen">
+  
+  <div class="tenor-gif-embed"
+       data-postid="11584824232104267827"
+       data-share-method="host"
+       data-aspect-ratio="1"
+       data-width="520px">
+  </div>
+
+  <h2 style="margin-top:20px;">
+    Sending you the warmest hug 🤗💖
+  </h2>
+
+  <script async src="https://tenor.com/embed.js"></script>
+</div>
+
+
+<script>
+let c=0;
+
+function yes(){
+  // hide card
+  document.getElementById("card").style.display="none";
+
+  // show hug animation
+  document.getElementById("hugScreen").style.display="flex";
+}
+
+function no(){
+  c++;
+  let result=document.getElementById("result");
+
+  if(c==1) result.innerHTML="🥺 But it smells like me…";
+  else if(c==2) result.innerHTML="😭 I’ll hug tighter!";
+  else result.innerHTML="Okay… I’ll hug you myself 💕";
+}
+</script>
+
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Teddy Day 🧸</title>
+<style>
+body{margin:0;height:100vh;display:flex;justify-content:center;align-items:center;
+background:#fff0f5;font-family:Arial;overflow:hidden}
+#gifScreen,#card{text-align:center;width:90%;max-width:360px}
+#card{display:none;background:#ffeaf3;padding:22px;border-radius:18px}
+.note{margin-top:16px;padding:10px 18px;background:#fff;border-radius:12px;cursor:pointer}
+button{padding:10px 18px;margin:10px;border:none;border-radius:22px}
+.yes{background:#ff4d6d;color:#fff}.no{background:#ddd}
+#result{margin-top:15px}
+</style>
+</head>
+<body>
+
+<div id="gifScreen">
+  <div class="tenor-gif-embed" data-postid="20983241" data-width="100%"></div>
+  <script async src="https://tenor.com/embed.js"></script>
+  <div class="note" onclick="show()">Tap the teddy 🧸</div>
+</div>
+
+<div id="card">
+  <h2>Teddy Day 🧸</h2>
+  <p>If we can’t hug every day…</p>
+  <p><strong>Will you hug this teddy for me?</strong></p>
+  <button class="yes" onclick="yes()">Yes 🥹🧸</button>
+  <button class="no" onclick="no()">No 😔</button>
+  <p id="result"></p>
+</div>
+
+<script>
+let c=0;
+function show(){gifScreen.style.display="none";card.style.display="block";}
+function yes(){result.innerHTML="Then my warmth stays with you 🧸💖";}
+function no(){
+ c++;
+ if(c==1)result.innerHTML="🥺 But it smells like me…";
+ else if(c==2)result.innerHTML="😭 I’ll hug tighter!";
+ else result.innerHTML="Okay… I’ll hug you myself 💕";
+}
+</script>
+</body>
+</html> -->
