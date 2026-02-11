@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Promise Day 🤞</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff0f5;
+  font-family:'Indie Flower', cursive;
+  overflow:hidden;
+}
+
+/* floating hearts */
+.heart{
+  position:fixed;
+  bottom:-10px;
+  font-size:18px;
+  animation:float 6s linear infinite;
+  opacity:0.7;
+}
+@keyframes float{
+  from{transform:translateY(0)}
+  to{transform:translateY(-110vh)}
+}
+
+/* letter */
+#letter{
+  background:#ffe6f0;
+  padding:28px;
+  border-radius:18px;
+  width:320px;
+  text-align:center;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+  cursor:pointer;
+  transition:0.4s;
+}
+
+#letter:hover{
+  transform:scale(1.03);
+}
+
+#content{
+  display:none;
+  margin-top:15px;
+  text-align:left;
+  line-height:1.6;
+}
+
+h2{margin-top:0;color:#ff4d6d}
+</style>
+</head>
+
+<body>
+
+<div id="letter" onclick="openLetter()">
+  <h2>Promise Day 🤞</h2>
+
+  <div id="content">
+    <p>My Lady,</p>
+
+    <p>On this Promise Day, I don’t want big dramatic words…  
+    just small promises I truly mean.</p>
+
+    <p>💖 I promise to hold your hand even on days when you're quiet.  <br>
+    💖 I promise to listen to your overthinking and never call it “too much.”  <br>
+    💖 I promise to remind you how loved you are, especially when you forget.  <br>
+    💖 I promise to be patient with your fears and protect your heart gently.  <br>
+    💖 I promise to laugh with you, annoy you, and still choose you every day.  <br>
+    💖 I promise to grow with you, not away from you.  <br>
+    💖 And most importantly… I promise to love you softly, honestly, and for real.</p>
+
+    <p>You’re my favorite person, my safe place,  
+    and the girl I want to keep choosing. 💕</p>
+
+    <p>Forever yours💌</p>
+  </div>
+</div>
+
+<script>
+function openLetter(){
+  document.getElementById("content").style.display="block";
+}
+
+/* floating hearts generator */
+setInterval(()=>{
+  let heart=document.createElement("div");
+  heart.className="heart";
+  heart.innerHTML="💗";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=(12+Math.random()*20)+"px";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),6000);
+},400);
+</script>
+
+</body>
+</html>
