@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kiss Day 💋</title>
+<style>
+body{margin:0;height:100vh;display:flex;align-items:center;justify-content:center;
+background:#fff0f5;font-family:Arial}
+#card{background:#ffe6f0;padding:24px;border-radius:18px;text-align:center}
+button{padding:10px 18px;margin:10px;border:none;border-radius:22px}
+.yes{background:#ff4d6d;color:#fff}.no{background:#ddd}
+#result{margin-top:15px}
+
+.hearts {
+  position: fixed;
+  bottom: -10%;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.hearts span {
+  position: absolute;
+  font-size: 22px;
+  animation: floatUp linear infinite;
+  opacity: 0.7;
+}
+
+.hearts span:nth-child(1){left:10%;animation-duration:6s;}
+.hearts span:nth-child(2){left:20%;animation-duration:7.5s;}
+.hearts span:nth-child(3){left:30%;animation-duration:7s;}
+.hearts span:nth-child(4){left:40%;animation-duration:6.8s;}
+.hearts span:nth-child(5){left:50%;animation-duration:6.2s;}
+.hearts span:nth-child(6){left:60%;animation-duration:7.8s;}
+.hearts span:nth-child(7){left:70%;animation-duration:6.4s;}
+.hearts span:nth-child(8){left:80%;animation-duration:7.2s;}
+.hearts span:nth-child(9){left:90%;animation-duration:5.9s;}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity:0; }
+  10% { opacity:0.7; }
+  100% { transform: translateY(-120vh); opacity:0.4; }
+}
+</style>
+</head>
+<body>
+<div class="hearts">
+  <span>💖</span><span>💕</span><span>💘</span><span>💗</span><span>💝</span>
+  <span>💖</span><span>💌</span><span>💓</span><span>🩷</span>
+</div>
+<div id="card">
+  <h2>Kiss Day 💋</h2>
+  <p>Just a soft question…</p>
+  <p><strong>Can I steal a kiss from you?</strong></p>
+  <button class="yes" onclick="yes()">Come closer 😘</button>
+  <button class="no" onclick="no()">Blushing 🙈</button>
+  <p id="result"></p>
+</div>
+
+<script>
+let k=0;
+function yes(){result.innerHTML="One kiss, thousand feelings 💋💖";}
+function no(){
+ k++;
+ if(k==1)result.innerHTML="🥺 Just on the cheek?";
+ else if(k==2)result.innerHTML="😭 I’ll wait patiently";
+ else result.innerHTML="Saving it for Valentine’s 💕";
+}
+</script>
+</body>
+</html>
