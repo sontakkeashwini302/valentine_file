@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Favorite Person 💖</title>
+    <style>
+        :root {
+            --primary: #ff4d6d;
+            --secondary: #ff85a1;
+            --bg: #fff0f5;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #ffd6e8, var(--bg));
+            font-family: 'Segoe UI', Arial, sans-serif;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- Photo Film Strip --- */
+        .film-container {
+            width: 100%;
+            background: #222;
+            padding: 15px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            border-bottom: 4px dashed #444;
+            border-top: 4px dashed #444;
+            margin-bottom: 30px;
+        }
+
+        .film-strip {
+            display: inline-block;
+            animation: scroll-film 20s linear infinite;
+        }
+
+        .film-strip img {
+            height: 120px;
+            width: 160px;
+            object-fit: cover;
+            margin: 0 10px;
+            border: 5px solid white;
+            border-radius: 4px;
+        }
+
+        @keyframes scroll-film {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        #result{margin-top:15px}
+        /* --- Main Question Card --- */
+        .main-card {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            z-index: 10;
+            margin-bottom: 40px;
+        }
+
+        .main-card h2 { color: var(--primary); font-size: 24px; }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+            height: 60px;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #yesBtn { background: var(--primary); color: white; font-size: 18px; }
+        #noBtn { background: #ccc; color: #666; font-size: 16px; }
+
+        /* --- Message Letters --- */
+        .letters-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 500px;
+            margin-bottom: 50px;
+        }
+
+        .letter-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .letter-card:hover { transform: translateY(-5px) rotate(3deg); }
+
+        /* --- Popup --- */
+        .popup {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 300px;
+            animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes pop { from { transform: scale(0); } to { transform: scale(1); } }
+
+        /* --- Cursor Hearts --- */
+        .cursor-heart {
+            position: fixed;
+            pointer-events: none;
+            color: var(--primary);
+            font-size: 20px;
+            animation: fall 1s linear forwards;
+            z-index: 999;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(50px) rotate(360deg); opacity: 0; }
+        }
+        .hearts {
+  position: fixed;
+  bottom: -10%;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.hearts span {
+  position: absolute;
+  font-size: 22px;
+  animation: floatUp linear infinite;
+  opacity: 0.7;
+}
+
+.hearts span:nth-child(1){left:10%;animation-duration:6s;}
+.hearts span:nth-child(2){left:20%;animation-duration:7.5s;}
+.hearts span:nth-child(3){left:30%;animation-duration:7s;}
+.hearts span:nth-child(4){left:40%;animation-duration:6.8s;}
+.hearts span:nth-child(5){left:50%;animation-duration:6.2s;}
+.hearts span:nth-child(6){left:60%;animation-duration:7.8s;}
+.hearts span:nth-child(7){left:70%;animation-duration:6.4s;}
+.hearts span:nth-child(8){left:80%;animation-duration:7.2s;}
+.hearts span:nth-child(9){left:90%;animation-duration:5.9s;}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity:0; }
+  10% { opacity:0.7; }
+  100% { transform: translateY(-120vh); opacity:0.4; }
+}
+    </style>
+</head>
+<body>
+<div class="hearts">
+  <span>💖</span><span>💕</span><span>💘</span><span>💗</span><span>💝</span>
+  <span>💖</span><span>💌</span><span>💓</span><span>🩷</span>
+</div>
+    <div class="film-container">
+        <div class="film-strip">
+            <img src="valentine_file\photos\Snapchat-337157199.jpg" alt="Memory">
+            <img src="valentine_file\photos\Snapchat-420500100.jpg" alt="Memory">
+            <img src="valentine_file\photos\Snapchat-883005639.jpg" alt="Memory">
+            <img src="valentine_file\photos\Snapchat-949597190.jpg" alt="Memory">
+            <img src="valentine_file\photos\Snapchat-1082742922.jpg" alt="Memory">
+            <img src="valentine_file\photos\Snapchat-1869989573.jpg" alt="Memory">
+            <img src="valentine_file\photos\Snapchat-2127468131.jpg" alt="Memory">
+            <img src="valentine_file\photos\Snapchat-2144012307.jpg" alt="Memory">
+        </div>
+    </div>
+
+    <div class="main-card" id="mainQuestion">
+        <h2>Will you be my Valentine? 🥺</h2>
+        <div class="btn-container">
+            <button id="yesBtn" onclick="celebrate()">Yes!</button>
+            <button id="noBtn" onclick="shrinkNo()">No</button>
+            <p id="result"></p>
+        </div>
+        <script>
+let k=0;
+function yesBtn(){result.innerHTML="One kiss, thousand feelings 💋💖";}
+function noBtn(){
+ k++;
+ if(k==1)result.innerHTML="🥺 Just on the cheek?";
+ else if(k==2)result.innerHTML="😭 I’ll wait patiently";
+ else result.innerHTML="Saving it for Valentine’s 💕";
+}
+</script>
+    </div>
+
+    <p style="color: #888;">Tap a letter for a surprise...</p>
+    <div class="letters-grid">
+        <div class="letter-card" onclick="openMsg(0)">💌</div>
+        <div class="letter-card" onclick="openMsg(1)">💌</div>
+        <div class="letter-card" onclick="openMsg(2)">💌</div>
+        <div class="letter-card" onclick="openMsg(3)">💌</div>
+        <div class="letter-card" onclick="openMsg(4)">💌</div>
+        <div class="letter-card" onclick="openMsg(5)">💌</div>
+    </div>
+
+    <div class="popup" id="popup" onclick="closeMsg()">
+        <div class="popup-content" id="popupText"></div>
+    </div>
+
+    <script>
+        // Message Data
+        const messages = [
+            "You became my favorite thought without trying 💖",
+            "With you, even silence feels warm 🫶",
+            "I don’t need perfect — I just need you 🥹",
+            "Thank you for choosing me, every day 🌸💓",
+            "My heart feels safe when it’s with you💖💗",
+            "Happy Valentine's Day😚💖💝❤️‍🔥"
+        ];
+
+        // 1. Popup Logic
+        function openMsg(i) {
+            document.getElementById("popupText").innerHTML = messages[i];
+            document.getElementById("popup").style.display = "flex";
+        }
+        function closeMsg() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+        // 2. Persistent No Button Logic
+        let noCount = 0;
+        function shrinkNo() {
+            noCount++;
+            const noBtn = document.getElementById("noBtn");
+            const yesBtn = document.getElementById("yesBtn");
+            
+            if (noCount === 1) {
+                noBtn.style.transform = "scale(0.7)";
+                noBtn.innerHTML = "Are you sure?🥺";
+            } else if (noCount === 2) {
+                noBtn.style.transform = "scale(0.4)";
+                noBtn.innerHTML = "Think again! 😭";
+            } else {
+                noBtn.style.display = "none"; // Disappear on 3rd click
+                yesBtn.style.transform = "scale(1.5)"; // Make Yes bigger
+            }
+        }
+
+        // 3. Final Celebration
+        function celebrate() {
+            const card = document.getElementById("mainQuestion");
+            card.innerHTML = "<h2>Yay!!!!💝❤️</h2><p>You've made me the happiest person alive.😚🙈💖💝</p>";
+            // Firework effect could be added here
+        }
+
+        // 4. Cursor Heart Trail
+        document.addEventListener('mousemove', function(e) {
+            const heart = document.createElement('span');
+            heart.innerHTML = "❤️";
+            heart.classList.add('cursor-heart');
+            heart.style.left = e.clientX + 'px';
+            heart.style.top = e.clientY + 'px';
+            
+            // Random variation
+            const size = Math.random() * 20 + 10;
+            heart.style.fontSize = size + 'px';
+            
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
